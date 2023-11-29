@@ -1,6 +1,7 @@
 """
 An example of a multi-objective optimization problem that could occur in a real-life scenario.
 Imagine a company wants to minimize production costs while maximizing the quality of its products.
+
 We'll represent this with two functions:
 - one for cost and another for quality.
 - The goal is to find the production parameters (like quantity of raw materials) that achieve these objectives.
@@ -56,7 +57,7 @@ def main():
 
     # Optimizer
     res = minimize(multi_objective, x0, method='SLSQP', bounds=bounds, constraints=cons)
-    
+    print(res)
     print(f"Optimal solution: Material A = {res.x[0]}, Material B = {res.x[1]}")
     print(f"Minimum production cost: {production_cost(res.x)}")
     print(f"Maximum product quality: {product_quality(res.x)}")
